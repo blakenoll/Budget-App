@@ -12,17 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20171011211540) do
 
-  create_table "envelopes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "envelopes", force: :cascade do |t|
     t.decimal  "total",        precision: 8, scale: 2
     t.string   "name"
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
     t.integer  "user_id"
     t.integer  "initialTotal"
-    t.index ["user_id"], name: "fk_rails_8fd0551b06", using: :btree
   end
 
-  create_table "transactions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "transactions", force: :cascade do |t|
     t.decimal  "amount",        precision: 8, scale: 2
     t.string   "name"
     t.date     "date"
@@ -31,11 +33,9 @@ ActiveRecord::Schema.define(version: 20171011211540) do
     t.integer  "user_id"
     t.integer  "envelope_id"
     t.string   "envelope_name"
-    t.index ["envelope_id"], name: "fk_rails_8a4805981f", using: :btree
-    t.index ["user_id"], name: "fk_rails_77364e6416", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "name"
     t.string   "email"

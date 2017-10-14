@@ -10,11 +10,11 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: 5
-  username: rails_user
-  password: secretpassword
+  username: postgres
+  password:
   socket: /tmp/mysql.sock
 
 development:
