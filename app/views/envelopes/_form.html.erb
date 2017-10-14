@@ -1,0 +1,24 @@
+<%= form_for(envelope, :url => envelopes_path) do |f| %>
+<% if envelope.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(envelope.errors.count, "error") %> prohibited this envelope from being saved:</h2>
+
+  <ul>
+    <% envelope.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= label_tag(:name, 'name', class: 'sr-only') %>
+<%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
+
+<%= label_tag(:total, 'total', class: 'sr-only') %>
+<%= f.number_field(:total, class: 'form-control', placeholder: 'Total') %>
+
+<br>
+<%= f.submit "Create", class: "btn btn-primary btn-block" %>
+
+
+<% end %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BudgetApp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-md">
+      <a class="navbar-brand" href="#">EZ Budget</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <% if @page_title == 'Envelopes' %>active<% end %>">
+            <%= link_to("Envelopes", envelopes_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item <% if @page_title == 'All Transactions' %>active<% end %>">
+            <%= link_to("Transactions", transactions_path, class: 'nav-link') %>
+          </li>
+          <li class="nav-item <% if @page_title == 'Add Money' %>active<% end %>">
+            <%= link_to("Add Money", addmoney_path, class: 'nav-link') %>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <%= link_to("Logout", access_logout_path, class: 'btn btn-outline-info my-2 my-sm-0') %>
+        </form>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+  <footer>
+
+  </footer>
+</html>

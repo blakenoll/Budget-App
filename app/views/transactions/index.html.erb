@@ -1,0 +1,37 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">View:</p>
+    <h1 class="display-3"><%= @page_title = "All Transactions" %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <table class="table table-sm table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Date</th>
+          <th>Name</th>
+          <th>Envelope</th>
+          <th>Amount</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <% @transactions.each do |t| %>
+          <tr>
+            <td><%= t.date %></td>
+            <td><%= t.name %></td>
+            <td><%= t.envelope_name %></td>
+            <td>-$<%= t.amount %></td>
+            <td>
+              <%= link_to "Edit", edit_transaction_path(t), class: "btn btn-outline-primary btn-sm" %>
+              <%= link_to 'Delete', transaction_path(t), class: "btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+          <% end %>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

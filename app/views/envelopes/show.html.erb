@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead"><%= @envelope.name %> Balance:</p>
+    <h1 class="display-3 <% if @envelope.total <= 0 %>red<% end %>">$<%= @envelope.total %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <%= link_to "Add Transaction", new_transaction_path(envelope_id: @envelope.id), class: "btn btn-primary mr-auto" %>
+    <%= link_to "Edit", edit_envelope_path(@envelope), class: "btn btn-primary ml-auto" %>
+  </div>
+
+    <h2 class="text-center"><%= @envelope.name %> Transactions</h2>
+    <div class="row">
+      <table class="table table-sm table-striped">
+        <thead class="thead-default">
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @transactions.each do |t| %>
+            <tr>
+              <td><%= t.date %></td>
+              <td><%= t.name %></td>
+              <td>-$<%= t.amount %></td>
+            </tr>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

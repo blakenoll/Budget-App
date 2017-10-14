@@ -1,0 +1,29 @@
+<%= form_for(transaction, :url => transactions_path) do |f| %>
+<% if transaction.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+  <ul>
+    <% transaction.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= f.label(:envelope_id, 'Envelope') %>
+<%= f.collection_select(:envelope_id, @envelopes, :id, :name,{}, {class: 'form-control'}) %>
+
+<%= label_tag(:name, 'name', class: 'sr-only') %>
+<%= f.text_field(:name, class: 'form-control', placeholder: 'Payee') %>
+
+<%= label_tag(:amount, 'total', class: 'sr-only') %>
+<%= f.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
+
+<%= label_tag(:date, 'total', class: 'sr-only') %>
+<%= f.date_field(:date, class: 'form-control',step: :any, placeholder: 'Date') %>
+
+<br>
+<%= f.submit "Create", class: "btn btn-primary btn-block" %>
+
+
+<% end %>

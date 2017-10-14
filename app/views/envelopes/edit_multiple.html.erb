@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Edit:</p>
+    <h1 class="display-3"><%= @page_title = "Add Money" %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="form-signin">
+    <label for="total">Total</label>
+    <input id="total" type="number" name="total" value="0" class="form-control">
+  </div>
+  <h3 class="text-center">Envelopes</h3>
+  <h4>Unallocated: <span id="unallocated"></span></h4>
+  <div class="form-signin">
+    <%= form_tag update_multiple_envelopes_path, method: :put, id: 'inputs' do %>
+      <% @envelopes.each do |envelope| %>
+        <%= fields_for 'envelopes[]', envelope do |p| %>
+            <%= p.label envelope.name %>
+            <span>Budgeted amount: $<%= envelope.initialTotal %></span>
+            <%= p.number_field(:total, class: 'form-control',step: :any, placeholder: 'Amount', value: envelope.initialTotal) %>
+        <% end %>
+      <% end %>
+      <br>
+      <%= submit_tag 'Add Money', class: "btn btn-primary btn-block", id: 'submit', disabled: true %>
+    <% end %>
+  </div>
+</div>

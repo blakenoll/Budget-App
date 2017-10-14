@@ -1,0 +1,40 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Edit Transaction:</p>
+    <h1 class="display-3"><%= @page_title = "#{@transaction.name}" %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="form-signin">
+    <% transaction = @transaction %>
+    <%= form_for(transaction, :url => transaction_path) do |f| %>
+    <% if transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <%= label_tag(:envelope_id, 'Envelope') %>
+    <%= f.collection_select(:envelope_id, @envelopes, :id, :name,{}, class: 'form-control') %>
+
+    <%= label_tag(:name, 'Name') %>
+    <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
+
+    <%= label_tag(:amount, 'Total') %>
+    <%= f.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
+
+    <%= label_tag(:date, 'Date') %>
+    <%= f.date_field(:date, class: 'form-control',step: :any, placeholder: 'Date') %>
+
+    <br>
+    <%= f.submit "Update", class: "btn btn-primary btn-block" %>
+
+
+    <% end %>
+  </div>
+</div>

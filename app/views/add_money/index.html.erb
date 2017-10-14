@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="text-center"><%= @page_title = "Add Money" %></h1>
+
+  <%= form_tag add_money_path do %>
+  <% @envelope.each do |envelope| %>
+    <%= fields_for 'envelopes[]', envelope do |p| %>
+
+      <div class="field">
+        <%= p.label :name %><br>
+        <%= p.text_field :name %>
+      </div>
+      <div class="field">
+        <%= p.label :amount %><br>
+        <%= p.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
+      </div>
+
+    <% end %>
+  <% end %>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+  <ul>
+    <% @envelopes.each do |e| %>
+    <li><%= e.name %></li>
+    <% end %>
+  </ul>
+
+
+</div>

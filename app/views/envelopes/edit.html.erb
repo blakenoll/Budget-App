@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <p class="lead">Edit Envelope:</p>
+    <h1 class="display-3"><%= @page_title = "#{@envelope.name}" %></h1>
+  </div>
+</div>
+<div class="container">
+  <div class="form-signin">
+    <% envelope = @envelope %>
+    <%= form_for(envelope, :url => envelope_path) do |f| %>
+    <% if envelope.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(envelope.errors.count, "error") %> prohibited this envelope from being saved:</h2>
+
+      <ul>
+        <% envelope.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <%= label_tag(:name, 'name', class: 'sr-only') %>
+    <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
+
+    <%= label_tag(:total, 'total', class: 'sr-only') %>
+    <%= f.number_field(:total, class: 'form-control', step: :any, placeholder: 'Total') %>
+
+    <br>
+    <%= f.submit "Update", class: "btn btn-primary btn-block" %>
+    <% end %>
+    <br>
+    <%= link_to 'Delete', envelope_path(@envelope), class: "btn btn-outline-danger btn-block", method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>

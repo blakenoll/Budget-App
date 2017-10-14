@@ -1,0 +1,112 @@
+
+$cambridge-blue: #05668d;
+$taupe-gray: #59c3c3;
+$light-green: #a2d19c;
+$pale-turquoise: #ebf2fa;
+$dim-gray: #ff1654;
+$black: #222;
+$gradientcolor-1: $light-green;
+$gradientcolor-2: $taupe-gray;
+
+body {
+  background-color: #fff;
+  color: $black;
+}
+
+.gradient {
+  background: $gradientcolor-1;
+  background: -moz-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+  background: -webkit-gradient(left top, right top, color-stop(47%, $gradientcolor-1), color-stop(100%, $gradientcolor-2));
+  background: -webkit-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+  background: -o-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+  background: -ms-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+  background: linear-gradient(to right, $gradientcolor-1 47%, $gradientcolor-2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradientcolor-1', endColorstr='$gradientcolor-2', GradientType=1 );
+}
+
+.navbar {
+  background-color: #222;
+
+}
+
+.navbar-brand {
+  color: $pale-turquoise;
+  &:hover {
+    color: darken($pale-turquoise, 10%);
+  }
+}
+
+.nav-link {
+  color: $pale-turquoise;
+
+  &:hover {
+    color: darken($pale-turquoise, 10%);
+  }
+}
+
+.navbar-dark .nav-item {
+  &.active {
+    .nav-link {
+      color: $taupe-gray;
+    }
+  }
+
+
+}
+
+.btn-outline-info {
+  position: relative;
+  color: $light-green;
+  z-index: 1;
+  border: none;
+
+  &:hover {
+    color: $taupe-gray;
+    border: none;
+  }
+  &:after{
+    content: "";
+   position: absolute;
+   z-index: -1;
+   top: 2px;
+   left: 2px;
+   right: 2px;
+   bottom: 2px;
+   background: #222;
+   border-radius: 3px;
+  }
+  &:before {
+    content: "";
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   border-radius: 4px;
+   background: $gradientcolor-1;
+   background: -moz-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+   background: -webkit-gradient(left top, right top, color-stop(47%, $gradientcolor-1), color-stop(100%, $gradientcolor-2));
+   background: -webkit-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+   background: -o-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+   background: -ms-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
+   background: linear-gradient(to right, $gradientcolor-1 47%, $gradientcolor-2 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradientcolor-1', endColorstr='$gradientcolor-2', GradientType=1 );
+  }
+}
+
+.btn-primary {
+  background-color: $pale-turquoise;
+  color: $cambridge-blue;
+  border-color: $pale-turquoise;
+  &:hover {
+    background-color: darken($pale-turquoise, 5%);
+    border-color: darken($pale-turquoise, 5%);
+    color: $cambridge-blue;
+
+  }
+}
+
+.progress-bar {
+  background-color: $light-green;
+}

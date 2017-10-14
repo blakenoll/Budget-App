@@ -1,0 +1,51 @@
+// Place all the styles related to the envelopes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.envelope {
+  border: 3px solid $light-green;
+  margin-bottom: 20px;
+  .btn {
+    visibility: hidden;
+  }
+  a {
+    color: $light-green;
+  }
+  h4 {
+    color: $cambridge-blue;
+  }
+  &:hover {
+    a {
+      color: $light-green;
+      text-decoration: none;
+    }
+
+    .btn {
+      visibility: visible;
+    }
+  }
+}
+
+.total {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: $pale-turquoise;
+  background-color: $taupe-gray;
+}
+
+.jumbotron {
+  background-color: #222;
+  h1 {
+    color: $light-green;
+  }
+  .lead {
+    color: #eee;
+  }
+}
+
+.red {
+  color: $dim-gray !important;
+}
+
+.green {
+  color: $light-green !important;
+}
