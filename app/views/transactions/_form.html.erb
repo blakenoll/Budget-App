@@ -20,8 +20,7 @@
 <%= f.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
 
 <%= label_tag(:date, 'total', class: 'sr-only') %>
-<%= f.date_field(:date, class: 'form-control',step: :any, placeholder: 'Date') %>
-
+<%= f.date_field(:date, value: Date.today, class: 'form-control',step: :any, placeholder: 'Date') %>
 <br>
 <%= f.submit "Create", class: "btn btn-primary btn-block" %>
 
