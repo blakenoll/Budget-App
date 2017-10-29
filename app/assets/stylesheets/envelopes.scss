@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .envelope {
   border: 3px solid $light-green;
-  margin-bottom: 20px;
+  
   .btn {
     visibility: hidden;
   }
@@ -44,8 +44,4 @@
 
 .red {
   color: $dim-gray !important;
-}
-
-.green {
-  color: $light-green !important;
 }

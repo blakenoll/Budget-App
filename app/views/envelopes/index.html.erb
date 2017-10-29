@@ -15,7 +15,7 @@
   <br>
   <div class="row">
     <% @envelopes.each do |envelope| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-3">
         <div class="card envelope">
           <%= link_to envelope_path(envelope) do %>
           <div class="card-body">
@@ -33,7 +33,7 @@
       </div>
     <% end %>
 
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-center justify-content-center mb-3">
         <%= link_to(new_envelope_path) do %>
 
 
