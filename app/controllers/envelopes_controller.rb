@@ -31,7 +31,7 @@ class EnvelopesController < ApplicationController
   def create
     @envelope = Envelope.new(envelope_params)
     @envelope.user = @user
-    @envelope.initialTotal = @envelope.total
+    @envelope.total = 0
     if @envelope.save
       redirect_to envelopes_path
       flash[:notice] = 'Envelope succesfully added'
@@ -67,7 +67,7 @@ class EnvelopesController < ApplicationController
   end
 
   def envelope_params
-    params.require(:envelope).permit(:name, :total)
+    params.require(:envelope).permit(:name, :initialTotal, :total)
   end
 
 end

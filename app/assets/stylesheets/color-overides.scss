@@ -135,6 +135,29 @@ footer {
   }
 }
 
+.btn-round {
+  display:block;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 1px solid $taupe-gray;
+
+}
+
 .progress-bar {
   background-color: $light-green;
+}
+
+.plus {
+  font-size: 48px;
+  color: $taupe-gray;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.navbar-brand {
+  img {
+    width: 50px;
+  }
 }

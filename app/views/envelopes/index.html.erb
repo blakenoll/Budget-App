@@ -32,9 +32,17 @@
         </div>
       </div>
     <% end %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-      <%= link_to("Add Envelope", new_envelope_path, class: "btn btn-primary") %>
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-center justify-content-center">
+        <%= link_to(new_envelope_path) do %>
+
+
+            <span class="plus">+</span>
+
+
+      <% end %>
     </div>
+
   </div>
   <h1 class="text-center">Savings Envelopes</h1>
 </div>

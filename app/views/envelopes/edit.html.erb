@@ -23,8 +23,8 @@
     <%= label_tag(:name, 'name', class: 'sr-only') %>
     <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
 
-    <%= label_tag(:total, 'total', class: 'sr-only') %>
-    <%= f.number_field(:total, class: 'form-control', step: :any, placeholder: 'Total') %>
+    <%= label_tag(:initialTotal, 'total', class: 'sr-only') %>
+    <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Total') %>
 
     <br>
     <%= f.submit "Update", class: "btn btn-primary btn-block" %>

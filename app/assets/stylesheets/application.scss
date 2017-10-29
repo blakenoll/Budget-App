@@ -1,8 +1,4 @@
-$dim-gray: #706c61;
-$taupe-gray: #899e8b;
-$cambridge-blue: #99c5b5;
-$pale-turquoise: #AFECE7;
-$light-green: #81f499;
+
 @import "bootstrap";
 @import "./*";
 /*
@@ -20,3 +16,6 @@ $light-green: #81f499;
  *= require_tree .
  *= require_self
  */
+a:hover {
+  text-decoration: none;
+}
