@@ -56,7 +56,6 @@ class EnvelopesController < ApplicationController
       envelope.save
     end
     redirect_to envelopes_path
-
   end
 
   def destroy
