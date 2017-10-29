@@ -49,7 +49,13 @@ class EnvelopesController < ApplicationController
     end
   end
 
-  def update_mulitple
+  def update_multiple
+    params[:envelopes].each_pair do |k, v|
+      envelope = Envelope.find(k)
+      envelope.total += v['total'].to_i
+      envelope.save
+    end
+    redirect_to envelopes_path
 
   end
 
