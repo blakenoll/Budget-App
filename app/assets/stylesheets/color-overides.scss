@@ -33,7 +33,7 @@ footer {
    height:60px;   /* Height of the footer */
    background:#fff;
    padding: 1rem;
-   color: #fff;
+   color: $taupe-gray;
 
    a {
      color: $taupe-gray;
@@ -81,8 +81,10 @@ footer {
       color: $taupe-gray;
     }
   }
+}
 
-
+.navbar-dark .navbar-toggler {
+  border: none;
 }
 
 .btn-outline-info {
