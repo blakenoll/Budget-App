@@ -69,6 +69,10 @@ class EnvelopesController < ApplicationController
 
   def set_envelope
       @envelope = Envelope.find(params[:id])
+      if @envelope.user_id != session[:user_id]
+        redirect_to login_path
+        flash[:notice] = "Permission Denied. Enevelope does not belong ot you"
+      end
   end
 
   def envelope_params

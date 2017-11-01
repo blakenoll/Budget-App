@@ -154,10 +154,17 @@ footer {
 }
 
 .plus {
-  font-size: 48px;
+  font-size: 2rem;
   color: $taupe-gray;
+  height: 35px;
+  width: 35px;
+  border: 2px solid;
+  border-radius: 50%;
+  padding-bottom: 5px;
+
   &:hover {
     text-decoration: none;
+    color: lighten($taupe-gray, 20%);
   }
 }
 
