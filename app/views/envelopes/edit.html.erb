@@ -20,11 +20,14 @@
     </div>
     <% end %>
 
-    <%= label_tag(:name, 'name', class: 'sr-only') %>
+    <%= label_tag(:name, 'Name') %>
     <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
 
-    <%= label_tag(:initialTotal, 'total', class: 'sr-only') %>
-    <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Total') %>
+    <%= label_tag(:initialTotal, 'Budgeted Amount') %>
+    <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Budgeted Amount') %>
+
+    <%= label_tag(:total, 'Envelope Balance') %>
+    <%= f.number_field(:total, class: 'form-control', placeholder: 'Envelope Balance') %>
 
     <br>
     <%= f.submit "Update", class: "btn btn-primary btn-block" %>

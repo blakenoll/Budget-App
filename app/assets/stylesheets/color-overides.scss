@@ -94,8 +94,20 @@ footer {
   border: none;
 
   &:hover {
-    color: $taupe-gray;
+    color: #fff;
     border: none;
+    &::after{
+      content: "";
+     position: absolute;
+     z-index: -1;
+     top: 2px;
+     left: 2px;
+     right: 2px;
+     bottom: 2px;
+     background: transparent;
+     border-radius: 3px;
+   }
+
   }
   &:after{
     content: "";
