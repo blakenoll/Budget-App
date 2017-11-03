@@ -14,8 +14,12 @@
 <%= label_tag(:name, 'name', class: 'sr-only') %>
 <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
 
-<%= label_tag(:initotal, 'total', class: 'sr-only') %>
-<%= f.number_field(:initialTotal, class: 'form-control', placeholder: 'Total') %>
+<%= label_tag(:initotal, 'Budgeted Amount', class: 'sr-only') %>
+<div class="input-group">
+  <span class="input-group-addon">$</span>
+  <%= f.number_field(:initialTotal, class: 'form-control', placeholder: 'Bugeted Amount') %>
+</div>
+
 
 <br>
 <%= f.submit "Create", class: "btn btn-primary btn-block" %>

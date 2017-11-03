@@ -13,11 +13,11 @@
 <body>
   <div id="container">
     <div id="main">
-      <nav class="navbar navbar-dark navbar-expand-md">
-        <a class="navbar-brand" href="#">
+      <nav class="navbar fixed-top navbar-dark navbar-expand-md">
+          <%= link_to(envelopes_path, class: 'navbar-brand') do %>
           <%= image_tag 'mail.png' %>
           <%= @user.name %>
-        </a>
+          <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

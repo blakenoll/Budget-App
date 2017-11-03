@@ -7,8 +7,10 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <%= link_to "+ Transaction", new_transaction_path(envelope_id: @envelope.id), class: "btn btn-primary mr-auto" %>
-      <%= link_to "Edit", edit_envelope_path(@envelope), class: "btn btn-primary ml-auto" %>
+      <div class="btn-group float-right" role="group" aria-label="Basic example">
+        <%= link_to "+ Transaction", new_transaction_path(envelope_id: @envelope.id), class: "btn btn-primary" %>
+        <%= link_to "Edit", edit_envelope_path(@envelope), class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 
@@ -21,6 +23,7 @@
               <th>Date</th>
               <th>Name</th>
               <th>Amount</th>
+              <th>Options</th>
             </tr>
           </thead>
           <tbody>
@@ -30,6 +33,7 @@
                 <td><%= t.date %></td>
                 <td><%= t.name %></td>
                 <td>-$<%= t.amount %></td>
+                <td><%= link_to "Edit", edit_transaction_path(t), class: "btn btn-primary btn-sm" %></td>
               </tr>
               <% end %>
             </tr>

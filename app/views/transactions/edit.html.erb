@@ -26,13 +26,18 @@
     <%= f.text_field(:name, class: 'form-control', placeholder: ' Transaction Name') %>
 
     <%= label_tag(:amount, 'Amount') %>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
     <%= f.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
+    </div>
 
     <%= label_tag(:date, 'Date') %>
     <%= f.date_field(:date, class: 'form-control',step: :any, placeholder: 'Date') %>
 
     <br>
     <%= f.submit "Update", class: "btn btn-primary btn-block" %>
+    <br>
+    <%= link_to 'Delete', transaction_path(transaction), class: "btn btn-outline-danger btn-block", method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
     <% end %>

@@ -24,11 +24,17 @@
     <%= f.text_field(:name, class: 'form-control', placeholder: 'Name') %>
 
     <%= label_tag(:initialTotal, 'Budgeted Amount') %>
-    <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Budgeted Amount') %>
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Budgeted Amount') %>
+    </div>
+
 
     <%= label_tag(:total, 'Envelope Balance') %>
-    <%= f.number_field(:total, class: 'form-control', placeholder: 'Envelope Balance') %>
-
+    <div class="input-group">
+      <span class="input-group-addon">$</span>
+      <%= f.number_field(:total, class: 'form-control', placeholder: 'Envelope Balance') %>
+    </div>
     <br>
     <%= f.submit "Update", class: "btn btn-primary btn-block" %>
     <% end %>
