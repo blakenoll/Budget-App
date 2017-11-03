@@ -19,7 +19,9 @@ h1, h2 {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
   &:hover {
-    color: $taupe-gray;
+    background-color: $taupe-gray;
+    border-color: $taupe-gray;
+    color: #fff;
     text-decoration: none;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
