@@ -11,11 +11,10 @@
 #
 default: &default
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   pool: 5
-  username: postgres
   password:
-  socket: /tmp/mysql.sock
+
 
 development:
   <<: *default

@@ -1,7 +1,7 @@
 
 $cambridge-blue: #05668d;
-$taupe-gray: #59c3c3;
-$light-green: #a2d19c;
+$taupe-gray: #38ef7d;
+$light-green: #11998e;
 $pale-turquoise: #ebf2fa;
 $dim-gray: #ff1654;
 $black: #222;
@@ -45,19 +45,13 @@ footer {
 }
 
 .gradient {
-  background: $gradientcolor-1;
-  background: -moz-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-  background: -webkit-gradient(left top, right top, color-stop(47%, $gradientcolor-1), color-stop(100%, $gradientcolor-2));
-  background: -webkit-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-  background: -o-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-  background: -ms-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-  background: linear-gradient(to right, $gradientcolor-1 47%, $gradientcolor-2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradientcolor-1', endColorstr='$gradientcolor-2', GradientType=1 );
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .navbar {
-  background-color: #222;
-
+  background: #000000;
 }
 
 .navbar-brand {
@@ -117,7 +111,7 @@ footer {
    left: 2px;
    right: 2px;
    bottom: 2px;
-   background: #222;
+   background: #000000;
    border-radius: 3px;
   }
   &:before {
@@ -129,26 +123,21 @@ footer {
    right: 0;
    bottom: 0;
    border-radius: 4px;
-   background: $gradientcolor-1;
-   background: -moz-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-   background: -webkit-gradient(left top, right top, color-stop(47%, $gradientcolor-1), color-stop(100%, $gradientcolor-2));
-   background: -webkit-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-   background: -o-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-   background: -ms-linear-gradient(left, $gradientcolor-1 47%, $gradientcolor-2 100%);
-   background: linear-gradient(to right, $gradientcolor-1 47%, $gradientcolor-2 100%);
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$gradientcolor-1', endColorstr='$gradientcolor-2', GradientType=1 );
+   background: #11998e;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 }
 
 .btn-primary {
   background-color: transparent;
-  color: $taupe-gray;
-  border-color: $taupe-gray;
+  color: $light-green;
+  border-color: $light-green;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   &:hover {
-    background-color: $taupe-gray;
-    border-color: darken($taupe-gray, 5%);
+    background-color: $light-green;
+    border-color: darken($light-green, 5%);
     color: #fff;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
@@ -160,12 +149,16 @@ footer {
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  border: 1px solid $taupe-gray;
+  border: 1px solid $light-green;
 
 }
 
 .progress-bar {
-  background-color: $light-green;
+  background: #11998e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 
