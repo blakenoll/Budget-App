@@ -36,14 +36,15 @@ class TransactionsController < ApplicationController
 
   def update
     @envelope = @transaction.envelope
-    if @envelope.id != transaction_params[:envelope_id]
+    print(@envelope.id)
+    if @envelope.id != transaction_params[:envelope_id].to_f
       @envelope.total = (@envelope.total + @transaction.amount)
       @new_envelope = Envelope.find(transaction_params[:envelope_id])
       @new_envelope.total -= transaction_params[:amount].to_f
       @transaction.envelope_name = @new_envelope.name
       @new_envelope.save
     else
-    @envelope.total = (@envelope.total + @transaction.amount) - transaction_params[:amount].to_f
+    @envelope.total = ((@envelope.total + @transaction.amount) - transaction_params[:amount].to_f)
     end
     if @transaction.update(transaction_params) && @envelope.save
       redirect_to envelopes_path
