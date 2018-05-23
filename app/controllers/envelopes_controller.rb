@@ -32,6 +32,7 @@ class EnvelopesController < ApplicationController
     @envelope = Envelope.new(envelope_params)
     @envelope.user = @user
     @envelope.total = 0
+    @envelope.initialTotal = 0 if @envelope.initialTotal.nil?
     if @envelope.save
       redirect_to envelopes_path
       flash[:notice] = 'Envelope succesfully added'
@@ -71,7 +72,7 @@ class EnvelopesController < ApplicationController
       @envelope = Envelope.find(params[:id])
       if @envelope.user_id != session[:user_id]
         redirect_to login_path
-        flash[:notice] = "Permission Denied. Enevelope does not belong ot you"
+        flash[:notice] = "Access Denied. Enevelope does not belong to you"
       end
   end
 

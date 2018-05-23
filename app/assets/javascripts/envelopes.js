@@ -24,6 +24,12 @@ document.addEventListener("turbolinks:load", function() {
         $('#unallocated').text('$' + unallocated)
     });
 
+    $(document).ready(function() {
+      $(".clickable-row").click(function() {
+        window.location = $(this).data("href")
+      })
+    })
+
 })
 
 function checkInputs() {

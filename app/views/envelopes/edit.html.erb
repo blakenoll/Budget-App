@@ -25,14 +25,18 @@
 
     <%= label_tag(:initialTotal, 'Budgeted Amount') %>
     <div class="input-group">
-      <span class="input-group-addon">$</span>
+      <div class="input-group-prepend">
+        <div class="input-group-text">$</div>
+      </div>
       <%= f.number_field(:initialTotal, class: 'form-control', step: :any, placeholder: 'Budgeted Amount') %>
     </div>
 
 
     <%= label_tag(:total, 'Envelope Balance') %>
     <div class="input-group">
-      <span class="input-group-addon">$</span>
+      <div class="input-group-prepend">
+        <div class="input-group-text">$</div>
+      </div>
       <%= f.number_field(:total, class: 'form-control', placeholder: 'Envelope Balance') %>
     </div>
     <br>

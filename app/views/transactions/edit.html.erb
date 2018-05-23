@@ -27,7 +27,9 @@
 
     <%= label_tag(:amount, 'Amount') %>
     <div class="input-group">
-      <span class="input-group-addon">$</span>
+      <div class="input-group-prepend">
+        <div class="input-group-text">$</div>
+      </div>
     <%= f.number_field(:amount, class: 'form-control',step: :any, placeholder: 'Amount') %>
     </div>
 

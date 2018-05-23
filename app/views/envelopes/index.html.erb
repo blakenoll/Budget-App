@@ -10,37 +10,30 @@
       <div class="btn-group float-right">
         <%= link_to "+ Transaction", new_transaction_path, class: "btn btn-primary" %>
         <%= link_to "+ Money", addmoney_path, class: "btn btn-primary" %>
+        <%= link_to "+ Envelope", new_envelope_path, class: 'btn btn-primary' %>
       </div>
 
     </div>
   </div>
   <h1 class="text-center"><%= @page_title = "Envelopes" %></h1>
   <div class="row">
-    <% @envelopes.each do |envelope| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mb-3">
-        <div class="card envelope">
-          <%= link_to envelope_path(envelope) do %>
-          <div class="card-body">
-            <h4 class="card-title"><%= envelope.name %></h4>
-            <h6 class="card-subtitle mb-2 text-muted">Money Available:</h6>
-            <h3 class="card-text <% if envelope.total <= 0 %>red<% end %>">$<%= envelope.total %></h3>
-            <div class="progress">
+    <table class="table table-hover table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th>Name</th>
+          <th>Money Availible</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @envelopes.each do |envelope| %>
+          <tr class="clickable-row" data-href='<%= envelope_path(envelope)%>'>
+            <td><%= envelope.name %></td>
+            <td><span class="card-text <% if envelope.total <= 0 %>red<% end %>">$<%= envelope.total %></span><span> of $<%= envelope.initialTotal %></span><div class="progress">
               <div class="progress-bar" role="progressbar" style="width: <%= envelope.total/envelope.initialTotal * 100 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <!-- <%= link_to 'View Transactions', envelope_path(envelope), class: "btn btn-primary" %>
-            <%= link_to 'Edit', edit_envelope_path(envelope), class: "btn btn-outline-info float-right" %> -->
-          </div>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-center justify-content-center mb-3">
-        <%= link_to(new_envelope_path, class: 'plus d-flex align-items-center justify-content-center') do %>
-        +
-      <% end %>
-    </div>
-
+            </div></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <h1 class="text-center">Savings Envelopes</h1>
 </div>

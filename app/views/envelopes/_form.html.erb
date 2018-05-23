@@ -16,7 +16,9 @@
 
 <%= label_tag(:initotal, 'Budgeted Amount', class: 'sr-only') %>
 <div class="input-group">
-  <span class="input-group-addon">$</span>
+  <div class="input-group-prepend">
+      <div class="input-group-text">$</div>
+    </div>
   <%= f.number_field(:initialTotal, class: 'form-control', placeholder: 'Bugeted Amount') %>
 </div>
 
